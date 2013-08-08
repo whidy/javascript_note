@@ -1,7 +1,7 @@
 // JavaScript Document
 
 git = document.getElementById('bg')
-bg.onclick = function change() {
+git.onclick = function change() {
 	if (git.innerHTML.match('关灯')) {
 		git.innerHTML = '开灯';
 		git.style.color = '#fff';
