@@ -14,3 +14,16 @@ git.onclick = function change() {
 		console.log(git)
 	}
 }
+
+//正则表达式版，1-100，1出现的次数
+window.onload = function() {
+	var num = 100;
+	var j = 0;
+	for (var i = 1; i <= num; i++) {
+		if ((/[1]/g).test(i.toString())) {
+			j++;
+			console.log(i);
+		}
+	}
+	console.log(j);
+}
