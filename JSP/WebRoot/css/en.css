@@ -1,0 +1,23 @@
+#home_nav_3 {
+background-image: url(../img/en_home_nav_contatti.png);
+}
+
+#mission {
+background-image: url(../img/en_nav_mission.png);
+}
+
+#portfolio {
+background-image: url(../img/en_nav_portfolio.png);
+}
+
+#contatti {
+background-image: url(../img/en_nav_contatti.png);
+}
+
+#contatti_text h2 {
+background-image: url(../img/en_contatti_title.png);
+}
+
+nav li a:hover {
+background-image: url(../img/en_nav_hover.png);
+}

@@ -1,0 +1,575 @@
+html,body,#layout {
+	height:100%;
+	min-width:1120px;
+}
+#portfolio_box {
+	min-width:780px;
+}
+address {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font-style:normal;
+	font:inherit;
+	vertical-align:baseline;
+}
+body {
+	min-height:600px;
+}
+body,img {
+	margin:0;
+	border:0;
+}
+body,input,textarea {
+	font-family:sans-serif;
+	font-size:11px;
+}
+h2,h3,h4,h5,h6,p {
+	margin-top:0;
+}
+a {
+	outline:none;
+}
+#layout > h1,#portfolio_box h1 {
+	display:none;
+}
+#portfolio_box footer,#loading #qLpercentage,#mission_gioco_text,#mission_soluzioni_text,#contatti_text,h2,h3,h4 {
+	font-family:'ChunkFiveRoman',sans-serif;
+	font-weight:normal;
+}
+#layout {
+	width:100%;
+}
+#loading,#home,#home_nav_1,#home_nav_2,#home_nav_3,#portfolio,#mission,#contatti {
+	padding:0 10px;
+	width:1100px;
+	min-height:600px;
+	margin:0 auto;
+	background:url(../img/home_logo.png) no-repeat fixed top center;
+}
+#loading {
+	background:transparent;
+}
+#home_nav_1,#home_nav_2,#home_nav_3 {
+	padding:0;
+	min-height:800px;
+}
+#home_nav_1 {
+	background-image:url(../img/home_nav_mission.png);
+}
+#home_nav_2 {
+	background-image:url(../img/home_nav_portfolio.png);
+}
+#home_nav_3 {
+	background-image:url(../img/home_nav_contatti.png);
+}
+#mission {
+	background-image:url(../img/nav_mission.png);
+}
+#portfolio {
+	background-image:url(../img/nav_portfolio.png);
+}
+#contatti {
+	background-image:url(../img/nav_contatti.png);
+}
+#layout > header {
+	width:1100px;
+	height:120px;
+	top:0;
+	left:50%;
+	z-index:100;
+	margin:0 0 0 -550px;
+	position:fixed;
+}
+#layout > header .logo {
+	width:80px;
+	height:80px;
+	float:left;
+	margin:20px 0;
+}
+#layout > header .logo a {
+	display:block;
+	width:100%;
+	height:100%;
+}
+nav ul,nav li {
+	list-style:none;
+	margin:0;
+	padding:0;
+	border:0;
+}
+nav ul {
+	width:360px;
+	height:120px;
+	float:right;
+}
+nav li {
+	float:left;
+}
+nav li a {
+	width:110px;
+	height:60px;
+	margin:30px 0 30px 10px;
+	display:block;
+	text-indent:-9999px;
+}
+nav li a:hover {
+	background:url(../img/nav_hover.png) no-repeat;
+}
+nav li a#nm:hover {
+	background-position:0 -29px;
+}
+nav li a#np:hover {
+	background-position:-120px -29px;
+}
+nav li a#nc:hover {
+	background-position:-240px -29px;
+}
+#home {
+	min-height:800px;
+}
+#home_text {
+	position:fixed;
+	width:1100px;
+	height:840px;
+	top:50%;
+	margin-top:-420px;
+}
+#home_text img {
+	position:absolute;
+	display:block;
+	left:50%;
+	top:50%;
+}
+#home_thats {
+	width:528px;
+	height:163px;
+	margin:-320px 0 0 -495px;
+}
+#home_the {
+	width:157px;
+	height:89px;
+	margin:-130px 0 0 -325px;
+}
+#home_way {
+	width:558px;
+	height:218px;
+	margin:-175px 0 0 -205px;
+}
+#home_we {
+	width:505px;
+	height:205px;
+	margin:-60px 0 0 -535px;
+}
+#home_like {
+	width:494px;
+	height:220px;
+	margin:90px 0 0 -260px;
+}
+#home_it {
+	width:266px;
+	height:220px;
+	margin:90px 0 0 280px;
+}
+#home_brand {
+	width:270px;
+	height:40px;
+	margin:360px 0 0 -135px;
+}
+#mission,#mission_pensiero_text,#mission_gioco_text,#mission_soluzioni_text {
+	width:1100px;
+	position:relative;
+}
+#mission_pensiero_text,#mission_gioco_text,#mission_soluzioni_text {
+	padding:100px 0;
+}
+#mission_pensiero_text {
+	height:750px;
+}
+#mission_gioco_text {
+	height:750px;
+}
+#mission_soluzioni_text {
+	height:650px;
+}
+#mission_pensiero_text img,#mission_gioco_text img,#mission_soluzioni_text img {
+	position:absolute;
+	left:50%;
+	top:50%;
+}
+#portfolio {
+	min-height:320px;
+	padding:160px 0;
+}
+#portfolio h2 {
+	background:url(../img/portfolio_title.png);
+	height:165px;
+	width:750px;
+	margin-left:-10px;
+	text-indent:-9999px;
+}
+#portfolio h3 {
+	font-size:14px;
+	letter-spacing:1px;
+	margin:0;
+	height:30px;
+	line-height:30px;
+}
+#portfolio h3 span {
+	font-size:8px;
+}
+#portfolio .box {
+	width:360px;
+	height:254px;
+	margin-right:10px;
+	margin-bottom:10px;
+	overflow:hidden;
+	float:left;
+}
+#portfolio .last {
+	margin-right:0;
+}
+#portfolio .box a.url {
+	text-decoration:none;
+	color:white;
+	border-bottom:1px dotted #666;
+}
+#portfolio .box a.url:hover {
+	border-bottom:0;
+	color:#64dffd;
+}
+#portfolio .box a.p {
+	display:block;
+	width:354px;
+	height:220px;
+	background:black url(../img/portfolio_box.jpg);
+	border:2px solid white;
+	overflow:hidden;
+}
+#portfolio .box a.p span {
+	display:block;
+	display:none;
+	position:absolute;
+	width:354px;
+	height:220px;
+	background:url(../img/portfolio_hover.png) center center;
+}
+#portfolio_box,#portfolio_slide,#portfolio_box .texture,#portfolio_box .texture .glare {
+	position:fixed;
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	z-index:9990;
+	display:none;
+	overflow:hidden;
+}
+#portfolio_slide,#portfolio_box .texture,#portfolio_box .texture .glare {
+	position:absolute;
+	display:block;
+}
+#portfolio_slide {
+	left:0;
+	top:80px;
+	width:100%;
+}
+#portfolio_box header {
+	padding:0 20px;
+}
+#portfolio_box footer,#portfolio_box header,#portfolio_slide img {
+	display:block;
+	margin:0 auto;
+}
+#portfolio_box footer {
+	position:absolute;
+	bottom:0;
+	height:60px;
+	width:100%;
+	line-height:60px;
+	font-size:16px;
+	font-weight:normal;
+}
+#portfolio_box footer div {
+	float:right;
+	margin-right:20px;
+}
+#portfolio_box footer a {
+	color:black;
+	text-decoration:none;
+	margin-left:20px;
+}
+#portfolio_box footer a:hover {
+	color:#64dffd;
+}
+#portfolio_slide {
+	min-height:240px;
+}
+#portfolio_box h2 {
+	margin:5px 0 0;
+	height:60px;
+	line-height:60px;
+	font-size:36px;
+	background:url(../img/portfolio_underline.png) -10px 50px no-repeat;
+	float:left;
+}
+#portfolio_box h2 span {
+	font-size:24px;
+}
+#portfolio_box h2 a.url {
+	text-decoration:none;
+	color:black;
+}
+#portfolio_box h2 a.url:hover {
+	color:#64dffd;
+}
+#portfolio_slide .slide {
+	width:100% !important;
+	background:url(../img/portfolio_load.gif) no-repeat center center;
+}
+#portfolio_prev_t,#portfolio_next_t,#portfolio_close span,#portfolio_prev span,#portfolio_next span,#portfolio_close,#portfolio_prev,#portfolio_next {
+	display:block;
+	width:47px;
+	height:47px;
+	background:url(../img/portfolio_buttons.png);
+	cursor:pointer;
+}
+#portfolio_close span,#portfolio_close {
+	width:33px;
+	height:33px;
+}
+#portfolio_close a {
+	display:block;
+	width:100%;
+	height:100%;
+}
+#portfolio_close {
+	float:right;
+	margin:24px 7px 0 0;
+	background-position:-94px 0;
+}
+#portfolio_close span {
+	background-position:-94px -47px;
+}
+#portfolio_prev_t,#portfolio_next_t,#portfolio_prev,#portfolio_next {
+	top:50%;
+	margin-top:-24px;
+	position:absolute;
+	z-index:9998;
+}
+#portfolio_prev_t,#portfolio_prev {
+	left:20px;
+}
+#portfolio_prev span {
+	background-position:0 -47px;
+}
+#portfolio_next_t,#portfolio_next {
+	right:20px;
+	background-position:-47px -47px;
+}
+#portfolio_next span {
+	background-position:-47px 0;
+}
+#portfolio_prev_t,#portfolio_next_t {
+	background:transparent;
+	z-index:9999;
+}
+#load {
+	position:absolute;
+	background:url(../img/portfolio_load.gif);
+	left:50%;
+	top:50%;
+	width:16px;
+	height:16px;
+	margin:3px 0 0 -8px;
+}
+#portfolio_box.layout #portfolio_slide img,#portfolio_box.layout,#portfolio_box.layout #portfolio_slide,#portfolio_box.layout .texture,#portfolio_box.layout .texture .glare {
+	position:static;
+	overflow:visible;
+	height:auto;
+}
+#portfolio_box.layout #portfolio_close {
+	margin-top:14px;
+}
+#portfolio_box.layout img {
+	max-width:960px;
+	min-width:240px;
+	padding:0 0 40px;
+}
+#portfolio_box.layout h2 {
+	margin:0 0 40px;
+}
+#portfolio_box.layout header {
+	padding:40px 20px;
+}
+#portfolio_box.layout footer {
+	position:fixed;
+}
+#contatti_text {
+	position:fixed;
+	width:1100px;
+	height:800px;
+	top:50%;
+	margin-top:-460px;
+	padding-top:120px;
+}
+#contatti_text h2 {
+	background:url(../img/contatti_title.png);
+	height:165px;
+	width:750px;
+	margin:0 0 20px -10px;
+	text-indent:-9999px;
+}
+#map {
+	width:730px;
+	height:620px;
+	float:left;
+	position:relative;
+	background:url(../img/contatti_map.png) bottom center;
+}
+#comics {
+	width:53px;
+	height:57px;
+	position:absolute;
+	z-index:1;
+	left:29.5%;
+	bottom:23.5%;
+	left:220px;
+	bottom:144px;
+}
+#comics a {
+	background:url(../img/contatti_comics.png);
+	width:53px;
+	height:57px;
+	display:block;
+}
+#comics a:hover {
+	background-position:-53px 0;
+}
+#contatti_text .boxC {
+	float:left;
+	width:350px;
+	width:330px;
+	height:420px;
+	overflow:hidden;
+	font-size:30px;
+	margin-left:20px;
+}
+#contatti_text .boxC address {
+	height:260px;
+}
+#contatti_text p span {
+	float:right;
+}
+#contatti_text a.mail {
+	text-decoration:none;
+	height:41px;
+	color:black;
+}
+#contatti_text a.mail:hover {
+	color:#64dffd;
+}
+#contatti_text a.flickr,#contatti_text a.facebook,#contatti_text a.twitter {
+	display:block;
+	height:56px;
+	width:56px;
+	margin:25px 10px 20px 0;
+	float:left;
+	background:url(../img/social.png);
+}
+#contatti_text a.facebook:hover {
+	background-position:0 -56px;
+}
+#contatti_text a.twitter {
+	background-position:-56px 0;
+}
+#contatti_text a.twitter:hover {
+	background-position:-56px -56px;
+}
+#contatti_text a.flickr {
+	background-position:-112px 0;
+}
+#contatti_text a.flickr:hover {
+	background-position:-112px -56px;
+}
+#portfolio_box .texture .glare,.bg_white .glare {
+	background:url(../img/white_glare.png) center center no-repeat fixed;
+}
+.bg_black .glare {
+	background:url(../img/black_glare.png) center center no-repeat fixed;
+}
+.bg_black,.bg_white {
+	position:relative;
+	width:100%;
+}
+.bg_black {
+	background:black url(../img/black_filtre.png) fixed;
+}
+#portfolio_box,.bg_white {
+	background:white url(../img/white_filtre.png) top repeat-x;
+}
+#portfolio_box .texture,.bg_white .texture {
+	background:url(../img/texture.png) fixed;
+}
+.bg_black,.bg_black a {
+	color:white;
+}
+.bg_white,.bg_white a {
+	color:black;
+}
+#ball {
+	width:0;
+	height:0;
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin:0;
+	z-index:9997;
+}
+#logo {
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin:-120px 0 0 -120px;
+	z-index:9998;
+	height:240px;
+	width:240px;
+	background:url(../img/logo.png);
+}
+#loading,#logo {
+	display:none;
+}
+#loading #qLpercentage {
+	height:40px;
+	line-height:40px;
+	width:240px;
+	font-size:20px;
+	margin:160px auto 0;
+	text-align:center;
+	color:black;
+	font-weight:normal;
+}
+#awwwards {
+	position:fixed;
+	top:30px;
+	right:0;
+	z-index:9800;
+	background:url(../img/awwwardsWw.png);
+	width:89px;
+	height:145px;
+	display:none;
+}
+#awwwards a {
+	display:block;
+	width:100%;
+	height:100%;
+}
+.none {
+	display:none;
+}
+.clear {
+	clear:both;
+}
+#layout {
+	display:none;
+}

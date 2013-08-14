@@ -1,0 +1,9 @@
+@font-face {
+font-family: 'ChunkFiveRoman';
+font-weight: normal;
+font-style: normal;
+}
+
+a.next {
+    cursor: url(../img/arrow.png) 23 23, crosshair;
+}
