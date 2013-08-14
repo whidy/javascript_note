@@ -1,4 +1,4 @@
 javascript_note
 ===============
 
-本项目集合一些常用Javascript Function
+本项目集合一些常用Javascript Function and PHP
