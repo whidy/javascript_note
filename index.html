@@ -2,14 +2,66 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>关灯开灯</title>
-<style type="text/css">
-body{background: #fff; cursor: pointer;}
-</style>
+<title>Javascript 功能汇总</title>
+<link rel="stylesheet" href="css/css.css" type="text/css"/>
+<link rel="stylesheet" href="css/easyBtn.css" type="text/css"/>
+<script type="text/javascript" src='js/lib/jquery-1.8.3.min.js' type='text/javascript'></script>
+<script type="text/javascript" src='js/lib/shake_UI_1.8.22.js' type='text/javascript'></script>
+<script type="text/javascript" src='js/js.js' type='text/javascript'></script>
 </head>
-<body id='bg' >
-关灯
-<script type="text/javascript" src="js/js.js"></script>
+<body id='bg'>
+<div id="main">
+	<header>
+		Javascript 常用汇总
+	</header>
+	<div class='wrapper'>
+		<div class="mod">
+			<h2>1）目录</h2>
+			<div class="actions button-mix">
+			    <a href="#" class="button primary icon home">主页</a>
+			    
+			    <div class="button-group">
+			        <a href="#" class="button">开关灯</a>
+			        <a href="#" class="button danger">仿 Apple icloud 登入界面</a>
+			        <a href="#" class="button">待续...</a>
+			    </div>
+			                        
+			    <div class="button-group sub-group">
+			        <a class="button icon edit" title="提交BUG" href="https://github.com/hoosin/javascript_note/issues/new">提交BUG</a>
+			        <a href="#" class="button icon  fork">@Github</a>
+			    </div>
+			</div>
+		</div>
+		<div class="mod">
+			<h2>1）开关灯</h2>
+			<a class="button round" href="#button" onclick='change()' id='light'>关灯</a>
+		</div>
+		<div class="mod">
+			<h2>2）仿 Apple icloud 登入界面</h2>
+			<div id="login">
+			    <h1>
+			        test log in
+			    </h1>
+			    <form action="" method="post" id="formlogin">
+			        <div class="pdbt10">
+			            ID：
+			            <input type="text" name="j_username" id="j_username" />
+			        </div>
+			        <div class="pdbt10">
+			            PW：
+			            <input type="text" name="j_password" id="j_password" />
+			        </div>
+			        <div id="errormessage" class="pdbt10">
+			        </div>
+			        <input type="submit" value="landing..." class='button icon search'/>
+			    </form>
+			</div>
+		</div>
+	</div>
+	<footer>
+		 Thanks Github,Javascript 功能汇总 by @Hoosin 
+	</footer>
+</div>
 </body>
 </html>
 

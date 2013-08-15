@@ -1,15 +1,13 @@
 // JavaScript Document
-
-git = document.getElementById('bg')
-git.onclick = function change() {
-	if (git.innerHTML.match('关灯')) {
-		git.innerHTML = '开灯';
-		git.style.color = '#fff';
+ function change() {
+ 	var changes = document.getElementById('light');
+	var git = document.getElementById('bg');
+	if (changes.innerHTML.match('关灯')) {
+		changes.innerHTML = '开灯';
 		git.style.background = "#000";
 		console.log(git)
 	} else {
-		git.innerHTML = '关灯';
-		git.style.color = '#000';
+		changes.innerHTML = '关灯';
 		git.style.background = "#fff";
 		console.log(git)
 	}

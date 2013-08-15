@@ -1,0 +1,62 @@
+﻿<html>
+<head>
+	<title></title>
+</head>
+<link media=all href="css.css" type=text/css rel=stylesheet>
+<script src="jquery-1.7.2.min.js" type=text/javascript></script>
+<script src="shake_UI_1.8.22.js" type=text/javascript></script>
+<body>
+<div id="login">
+    <h1>
+        test log in
+    </h1>
+    <form action="" method="post" id="formlogin">
+        <div class="pdbt10">
+            用户名：
+            <input type="text" name="j_username" id="j_username" />
+        </div>
+        <div class="pdbt10">
+            密 码：
+            <input type="text" name="j_password" id="j_password" />
+        </div>
+        <div id="errormessage" class="pdbt10">
+        </div>
+        <input type="submit" value="登录" />
+    </form>
+</div>
+<script>
+$(document).ready(function() {
+    // 清除提示框信息
+    $("#j_username").focus(function(){
+        $("#errormessage").css("display","none");
+    });
+    // 表单事件
+   $("#formlogin").submit(function(){
+       var userName = $("#j_username").val();
+       var passWord = $("#j_password").val(); 
+	   //如果登录框为空，密码框不为空
+       if(userName == "" && passWord!= ""){
+            $("#errormessage").css("display","block");
+            $("#errormessage").html("错误1");
+            shakeTheRoom();
+		//如果登录框不为空，密码框为空
+       }else if(userName!= "" && passWord == ""){
+            $("#errormessage").css("display","block");
+            $("#errormessage").html("错误2");       
+            shakeTheRoom();
+		//如果登录框和密码框都为空
+       }else if(userName =="" && passWord ==""){
+            $("#errormessage").css("display","block");
+            $("#errormessage").html("错误3");       
+            shakeTheRoom();
+       }
+       return false;
+   });
+});
+
+function shakeTheRoom(){
+    $('#login').effect("shake", { distance:20,times:5 }, 50); //distance抖动幅度，times抖动次数,100抖动时间(毫秒)
+}
+</SCRIPT>
+</body>
+</html>
