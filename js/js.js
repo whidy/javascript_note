@@ -25,3 +25,36 @@ window.onload = function() {
 	}
 	console.log(j);
 }
+
+$(document).ready(function() {
+    // 清除提示框信息
+    $("#j_username").focus(function(){
+        $("#errormessage").css("display","none");
+    });
+    // 表单事件
+   $("#formlogin").submit(function(){
+       var userName = $("#j_username").val();
+       var passWord = $("#j_password").val(); 
+	   //如果登录框为空，密码框不为空
+       if(userName == "" && passWord!= ""){
+            $("#errormessage").css("display","block");
+            $("#errormessage").html("错误1");
+            shakeTheRoom();
+		//如果登录框不为空，密码框为空
+       }else if(userName!= "" && passWord == ""){
+            $("#errormessage").css("display","block");
+            $("#errormessage").html("错误2");       
+            shakeTheRoom();
+		//如果登录框和密码框都为空
+       }else if(userName =="" && passWord ==""){
+            $("#errormessage").css("display","block");
+            $("#errormessage").html("错误3");       
+            shakeTheRoom();
+       }
+       return false;
+   });
+});
+
+function shakeTheRoom(){
+    $('#login').effect("shake", { distance:20,times:5 }, 50); //distance抖动幅度，times抖动次数,100抖动时间(毫秒)
+}

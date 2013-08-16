@@ -32,9 +32,7 @@ h2 {
 	background:#ccc;
 	border: 1px solid #fff;
 }
-#errormessage {
-	display: none;
-}
+
 #login {
 	width: 250px;
 	padding: 30px 30px 30px 30px;
@@ -57,4 +55,5 @@ header{
 
 .mod{padding: 10px 20px;}
 .wrapper{padding: 20px 0;}
+#errormessage{height:19px;}
 footer{text-align: center; padding: 10px 0;}
