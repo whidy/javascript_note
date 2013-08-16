@@ -38,17 +38,17 @@ $(document).ready(function() {
 	   //如果登录框为空，密码框不为空
        if(userName == "" && passWord!= ""){
             $("#errormessage").css("display","block");
-            $("#errormessage").html("错误1");
+            $("#errormessage").html("账号不能为空");
             shakeTheRoom();
 		//如果登录框不为空，密码框为空
        }else if(userName!= "" && passWord == ""){
             $("#errormessage").css("display","block");
-            $("#errormessage").html("错误2");       
+            $("#errormessage").html("密码不能为空！");       
             shakeTheRoom();
 		//如果登录框和密码框都为空
        }else if(userName =="" && passWord ==""){
             $("#errormessage").css("display","block");
-            $("#errormessage").html("错误3");       
+            $("#errormessage").html("请输入账号密码");       
             shakeTheRoom();
        }
        return false;
