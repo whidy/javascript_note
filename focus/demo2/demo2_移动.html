@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新闻播放插件</title>
+<script src="../zepto.min.js"></script>
+<script src="../touch.js"></script>
+<script src="../play.min.js"></script>
+<style type="text/css">
+body{margin:0;}
+.fxplay{height:397px; margin:auto;position:relative;overflow:hidden; z-index:1;}
+.play{height:397px; margin:auto; overflow:hidden; position:relative;}
+.ctrl{width: 30px;height: 30px;position: absolute;cursor: pointer;display: block;line-height: 30px;color: #afafaf;font-size: 30px;text-align: center; text-decoration:none;}
+.ctrl:hover{ color:#1286DF;}
+.play-box{ height:397px; width:100%;}
+.play-item{ height:398px; width:100%;}
+.bar{ position:absolute; bottom:0; width:100%; z-index:10;}
+#playNo{ height:30px; line-height:30px; text-align:center;}
+#playNo i{ cursor:pointer; display: inline-block; background:#fff; margin:10px; border:1px solid #fff; width:50px; height:5px; overflow:hidden;}
+#playNo i.curr{ background:#333;}
+.play-item{ position:relative;}
+p{ position:absolute; left:0; width:100%; height:26px; line-height:26px; text-align:center; background:#000; margin:0; bottom:0; color:#fff; opacity:.8;}
+</style>
+</head>
+<body>
+<div class="play">
+    <div class="fxplay">
+        <div class="play-box">
+          <div class="play-item" style="background:url(p1.jpg) center no-repeat;"></div>
+          <div class="play-item" style="background:url(p2.jpg) center no-repeat;"></div>
+          <div class="play-item" style="background:url(p3.jpg) center no-repeat;"></div>
+          <div class="play-item" style="background:url(p4.jpg) center no-repeat;"></div>
+        </div>
+    </div>
+    <div class="bar">
+    	<div id="playNo"></div>
+    </div>
+</div>
+<script>
+//图片新闻轮播
+$('.fxplay').fxuiPlay({
+	qq:273500363,          //作者QQ号
+	//prev:$('#prev'),     //上一张
+	//next:$('#next'),     //下一张
+	no:$('#playNo'),     //是否开启数字
+	auto:true,           //是否自动播放
+	autotime:3000,       //自动播放间隔
+	effect:2,            //特效类型 0：渐变；1：变小 ;2:左右; 3:上下;
+	efftime:400,         //渐变时间
+	ismobi:true,         //如果手机端请传ture,会开启划动的操作。
+	evt:'click'          //click(默认)和hover/mouserover
+	
+});
+</script>
+</body>
+</html>
