@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>js简易滚动条</title>
+    <script type="text/javascript" src="jsScroll.js"></script>
+    <style type="text/css">
+    .divScrollBar{background-color:#ddd;position:absolute;opacity:0.5; filter:Alpha(opacity=50);}
+    .divScrollBar:hover{opacity:1; filter:Alpha(opacity=100);}
+    .divScrollBar div{background-color:#aaa; position:absolute; left:0px; top:0px;}
+    </style>
+</head>
+<body>
+<h1>js简易滚动条</h1>
+<div id="div1" style="width:auto; overflow:hidden; height:200px; width:300px; border:solid 1px gray; padding:10px; line-height:1.5;">
+hahawefa1<br />
+hahawefa2<br />
+hahawefa3<br />
+hahawefaae<br />
+hahawefa<br />
+hahawefa<br />
+hahawefa<br />
+hahawefaf<br />
+hahawefa<br />
+hahawefafa<br />
+awfawef<br />
+hahawefa<br />
+hahawefagag<br />
+hahawefa<br />
+hahawefa<br />
+hahawefa<br />
+hahawefaaf<br />
+hahawefa<br />
+hahawefaff<br />
+hahawefafffff<br />v
+</div>
+<div id="div2" style="width:auto; overflow:hidden; height:300px; border:solid 1px gray; padding:10px; line-height:1.5; margin-top:10px;">
+hahawefa1<br />
+hahawefa2<br />
+hahawefa3<br />
+hahawefaae<br />
+hahawefa<br />
+hahawefa<br />
+hahawefa<br />
+hahawefaf<br />
+hahawefa<br />
+hahawefafa<br />
+awfawef<br />
+hahawefa<br />
+hahawefagag<br />
+hahawefa<br />
+hahawefa<br />
+hahawefa<br />
+hahawefaaf<br />
+hahawefa<br />
+hahawefaff<br />
+hahawefafffff<br />v
+</div>
+<div id="div3" style="width:auto; border:solid 1px gray; padding:10px; line-height:1.5; margin-top:10px;">
+hahawefa1<br />
+hahawefa2<br />
+hahawefa3<br />
+hahawefaae<br />
+hahawefa<br />
+hahawefa<br />
+hahawefa<br />
+hahawefaf<br />
+hahawefa<br />
+hahawefafa<br />
+awfawef<br />
+hahawefa<br />
+hahawefagag<br />
+hahawefa<br />
+hahawefa<br />
+hahawefa<br />
+hahawefaaf<br />
+hahawefa<br />
+hahawefaff<br />
+hahawefafffff<br />v
+</div>
+<div id="divInfo" style=""></div>
+<script type="text/javascript">
+jsScroll(document.getElementById('div1'), 10, 'divScrollBar');
+jsScroll(document.getElementById('div2'));
+jsScroll(document.getElementById('div3'));
+</script>
+</body>
+</html>
