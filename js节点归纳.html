@@ -1,135 +1,141 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>JavaScript½Úµã²Ù×÷</title>
-	<script type="text/javascript">
-//³£ÓÃµÄ½ÚµãÊôĞÔ
-/*
-    nodeType----½ÚµãÀàĞÍ£¬ÔªËØ½ÚµãÊÇ1£¬ÎÄ±¾½ÚµãÊÇ3
-    nodeValue----½ÚµãÖµ£¬ÔªËØ½ÚµãÎª¿Õ£¬ÎÄ±¾½ÚµãµÄnodeValueÊôĞÔ¼´ÎªÎÄ±¾ÄÚÈİ
-    firstChild----¸ÃÔªËØ°üº¬µÄµÚÒ»¸ö×Ó½Úµã
-    lastChild----¸ÃÔªËØ°üº¬µÄ×îºóÒ»¸ö×Ó½Úµã
-    nextSibling----¸Ã½ÚµãµÄºóÒ»¸öĞÖµÜ½Úµã
-    previousSibling----¸Ã½ÚµãµÄÇ°Ò»¸öĞÖµÜ½Úµã
-    childNodes----×Ó½ÚµãÁĞ±í
-    nodeName----½ÚµãÃû³Æ£¬¶ÔÓÚÔªËØ½Úµã£¬·µ»ØtagName£¬¶ÔÓÚÎÄ±¾½Úµã£¬·µ»Ø#text
-*/
-window.onload=function(){
-    var container=document.getElementById("container");
-    var nodesAll=container.childNodes;   //×Ó½ÚµãÁĞ±í
-    nodesAll=filterSpaceNode(nodesAll);  //¹ıÂËµô¿Õ°××Ó½Úµã
-    //alert(nodesAll.length);
-    var header=document.getElementById("header");
-    var nextNode=nextSibling(header);
-    //alert(nextNode.nodeName);
-    var oDiv=document.getElementById("oDiv");
-    /*
-    var a=[];
-    for(var item in Node)  //NodeÔÚ»ğºüÏÂÊÇ×Ô´øµÄ
-    {
-        a.push(item+":"+Node[item]);
-    }
-    oDiv.innerHTML=a.join("<br />");   */
-    alert(lastChild(header));  //null
-    
-    //´´½¨½Úµã   ³£ÓÃµÄÓĞÁ½¸öcreateElement()ºÍcreateTextNode()
-    var newDiv=document.createElement("div");   
-    newDiv.innerHTML="¶¯Ì¬´´½¨µÄµÄ½Úµã";
-    document.body.appendChild(newDiv);   //Òª½«´´½¨µÄ½ÚµãÌí¼ÓÖÁÒ³ÃæÖĞ£¬²ÅÄÜÏÔÊ¾£¨²»È»Ö»ÊÇÔÚÄÚ´æÖĞ£¬²»»áÏÔÊ¾³öÀ´£©
-    
-    //ÓÃĞÂ½ÚµãÌæ»»¾É½Úµã
-    //node.replaceChild(newNode,oldNode)  //ÆäÖĞoldNodeÒ»¶¨ÒªÊÇnodeµÄ×Ó½Úµã
-    //ÔÚÄ³¸ö½ÚµãÇ°²åÈëÒ»¸öĞÂ½Úµã
-    //node.insertBefore(newNode,whichNode) //ÆäÖĞµÄÄ³¸ö½ÚµãÒ²Ò»¶¨ÒªÊÇnodeµÄ×Ó½Úµã
-    
-    //¿ËÂ¡½Úµã cloneNode()   
-    //×¢ÒâÒª´øÒ»¸öboolĞÍµÄ²ÎÊı:true±íÊ¾¸Ã½ÚµãµÄ×ÓÔªËØÒ²¸ú×Å¿ËÂ¡£¬flaseÔòÖ»¿ËÂ¡¸ÃÔªËØ
-    var cloneNode=document.getElementById("cloneNode");
-    var ncloneNode=cloneNode.cloneNode(true);
-    document.body.appendChild(ncloneNode);
-    
-}
-function filterSpaceNode(nodes){  //ÓÃÓÚ¸øFF¹ıÂËµô¿Õ°×ÎÄ±¾½Úµã£¨ÒòÎªFF»á°ÑÔªËØÖ®¼äµÄ¿Õ°×ÎÄ±¾µ±×÷½Úµã£©
-    for(var i=0,ret=[]; i<nodes.length; i++)
-    {
-        if(nodes[i].nodeType===3 && /^\s+$/.test(nodes[i].nodeValue))  //Èç¹ûÊÇÎÄ±¾½Úµã£¬²¢ÇÒÖ»ÊÇ¿Õ°×
-        {
-            continue;
-        }
-        ret.push(nodes[i]); //½«²»ÊÇ¿Õ°×µÄ½Úµã±£´æµ½Ò»¸öÊı×éÖĞ£¬×îºó·µ»ØÕâ¸öÊı×é
-    }
-    return ret;
-}
-function nextSibling(node)   //·µ»Ø½ÚµãµÄÏÂÒ»¸öĞÖµÜ½Úµã£¬¹ıÂËµô¿Õ°×ÎÄ±¾½Úµã
-{
-    var n=node.nextSibling;
-    if(n!=null && n.nodeType===3 && /^\s+$/.test(n.nodeValue))
-    {
-        return n.nextSibling;
-    }
-    return n;
-}
-function preSibling(node)   //·µ»Ø½ÚµãµÄÇ°Ò»¸öĞÖµÜ½Úµã£¬¹ıÂËµô¿Õ°×ÎÄ±¾½Úµã
-{
-    var n=node.preSibling;
-    if(n!=null && n.nodeType===3 && /^\s+$/.test(n.nodeValue))
-    {
-        return n.preSibling;
-    }
-    return n;
-}
-function firstChild(node) //µÚÒ»¸ö×Ó½Úµã(ÔªËØ½Úµã)
-{
-    //´Ë´¦ÓÃµÄÊÇÈıÔªÔËËã·û£¬ÅĞ¶Ï½ÚµãµÄfirstChildÊÇ·ñÊÇÔªËØ½Úµã£¬Èç¹û²»ÊÇ£¬Ôò·µ»Ø½ÚµãfirstChildµÄÏÂÒ»¸öĞÖµÜ½Úµã
-    return node.firstChild.nodeType==1?node.firstChild:node.firstChild.nextSibling;
-}
-function lastChild(node) //×îºóÒ»¸ö×Ó½Úµã(ÔªËØ½Úµã)
-{
-    return node.lastChild.nodeType==1?node.lastChild:node.lastChild.previousSibling;
-}
-function before(newNode,oldNode)  //ÔÚÄ³¸ö½ÚµãÇ°²åÈëÒ»¸öĞÂ½Úµã
-{
-    oldNode.parentNode.insertBefore(newNode,oldNode);
-}
-function delNode(node)   //É¾³ıÄ³¸ö½Úµã
-{
-    node.parentNode.removeChild(node);
-}
-//´¦ÀíIEÏÂµÄÈ¡µÃÊôĞÔÃûÎÊÌâ£¬ÈçÈ¡classµÄÊ±ºòÒªÓÃclassName
-var specialNames={
-    "class":"className",
-    "for":"htmlFor"
-};
-function getAttr(node,attrName){
-    var attr=node.getAttribute(attrName);
-    if(attr==null){
-        if(attrName in specialNames){
-            attrName=specialNames[attrName];
-            attr=node.getAttribute(attrName);
-        }
-    }
-    return attr;
-}
-//ÔÚÄ³¸ö½ÚµãºóÃæ²åÈëÒ»¸ö½Úµã
-function insertAfter(newNode,whichNode){  //½«newNode²åÈëµ½whichNodeµÄºóÃæ
-    //Èç¹ûwhichNodeÓĞÏÂÒ»¸öĞÖµÜ½ÚµãµÄ»°£¬¾Í½«newNode²åÈëµ½whichNode.nextSiblingµÄÇ°Ãæ
-    //Èç¹ûwhichNodeÃ»ÓĞÏÂÒ»¸öĞÖµÜ½Úµã£¬Ôò½«newNode²åÈëµ½whichNode.parentNodeµÄ×îºó
-    var pn=whichNode.parentNode;
-    if(whichNode.nextSibling){  //Èç¹û´æÔÚĞÖµÜ½Úµã
-        pn.insertBefore(newNode,whichNode.nextSibling);
-    }else{
-        pn.appendChild(newNode);
-    }
-    return newNode;  //×îºó·µ»ØÕâ¸öĞÂ²åÈëµÄ½Úµã
-}
-</script></head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScriptèŠ‚ç‚¹æ“ä½œ</title>
+<script type="text/javascript">
+	//å¸¸ç”¨çš„èŠ‚ç‚¹å±æ€§
+	/*
+	    nodeType----èŠ‚ç‚¹ç±»å‹ï¼Œå…ƒç´ èŠ‚ç‚¹æ˜¯1ï¼Œæ–‡æœ¬èŠ‚ç‚¹æ˜¯3
+	    nodeValue----èŠ‚ç‚¹å€¼ï¼Œå…ƒç´ èŠ‚ç‚¹ä¸ºç©ºï¼Œæ–‡æœ¬èŠ‚ç‚¹çš„nodeValueå±æ€§å³ä¸ºæ–‡æœ¬å†…å®¹
+	    firstChild----è¯¥å…ƒç´ åŒ…å«çš„ç¬¬ä¸€ä¸ªå­èŠ‚ç‚¹
+	    lastChild----è¯¥å…ƒç´ åŒ…å«çš„æœ€åä¸€ä¸ªå­èŠ‚ç‚¹
+	    nextSibling----è¯¥èŠ‚ç‚¹çš„åä¸€ä¸ªå…„å¼ŸèŠ‚ç‚¹
+	    previousSibling----è¯¥èŠ‚ç‚¹çš„å‰ä¸€ä¸ªå…„å¼ŸèŠ‚ç‚¹
+	    childNodes----å­èŠ‚ç‚¹åˆ—è¡¨
+	    nodeName----èŠ‚ç‚¹åç§°ï¼Œå¯¹äºå…ƒç´ èŠ‚ç‚¹ï¼Œè¿”å›tagNameï¼Œå¯¹äºæ–‡æœ¬èŠ‚ç‚¹ï¼Œè¿”å›#text
+	*/
+	window.onload = function() {
+		var container = document.getElementById("container");
+		var nodesAll = container.childNodes; //å­èŠ‚ç‚¹åˆ—è¡¨
+		nodesAll = filterSpaceNode(nodesAll); //è¿‡æ»¤æ‰ç©ºç™½å­èŠ‚ç‚¹
+		//alert(nodesAll.length);
+		var header = document.getElementById("header");
+		var nextNode = nextSibling(header);
+		//alert(nextNode.nodeName);
+		var oDiv = document.getElementById("oDiv");
+		/*
+	    var a=[];
+	    for(var item in Node)  //Nodeåœ¨ç«ç‹ä¸‹æ˜¯è‡ªå¸¦çš„
+	    {
+	        a.push(item+":"+Node[item]);
+	    }
+	    oDiv.innerHTML=a.join("<br />");   */
+		alert(lastChild(header)); //null
+
+		//åˆ›å»ºèŠ‚ç‚¹   å¸¸ç”¨çš„æœ‰ä¸¤ä¸ªcreateElement()å’ŒcreateTextNode()
+		var newDiv = document.createElement("div");
+		newDiv.innerHTML = "åŠ¨æ€åˆ›å»ºçš„çš„èŠ‚ç‚¹";
+		document.body.appendChild(newDiv); //è¦å°†åˆ›å»ºçš„èŠ‚ç‚¹æ·»åŠ è‡³é¡µé¢ä¸­ï¼Œæ‰èƒ½æ˜¾ç¤ºï¼ˆä¸ç„¶åªæ˜¯åœ¨å†…å­˜ä¸­ï¼Œä¸ä¼šæ˜¾ç¤ºå‡ºæ¥ï¼‰
+
+		//ç”¨æ–°èŠ‚ç‚¹æ›¿æ¢æ—§èŠ‚ç‚¹
+		//node.replaceChild(newNode,oldNode)  //å…¶ä¸­oldNodeä¸€å®šè¦æ˜¯nodeçš„å­èŠ‚ç‚¹
+		//åœ¨æŸä¸ªèŠ‚ç‚¹å‰æ’å…¥ä¸€ä¸ªæ–°èŠ‚ç‚¹
+		//node.insertBefore(newNode,whichNode) //å…¶ä¸­çš„æŸä¸ªèŠ‚ç‚¹ä¹Ÿä¸€å®šè¦æ˜¯nodeçš„å­èŠ‚ç‚¹
+
+		//å…‹éš†èŠ‚ç‚¹ cloneNode()   
+		//æ³¨æ„è¦å¸¦ä¸€ä¸ªboolå‹çš„å‚æ•°:trueè¡¨ç¤ºè¯¥èŠ‚ç‚¹çš„å­å…ƒç´ ä¹Ÿè·Ÿç€å…‹éš†ï¼Œflaseåˆ™åªå…‹éš†è¯¥å…ƒç´ 
+		var cloneNode = document.getElementById("cloneNode");
+		var ncloneNode = cloneNode.cloneNode(true);
+		document.body.appendChild(ncloneNode);
+
+	}
+
+	function filterSpaceNode(nodes) { //ç”¨äºç»™FFè¿‡æ»¤æ‰ç©ºç™½æ–‡æœ¬èŠ‚ç‚¹ï¼ˆå› ä¸ºFFä¼šæŠŠå…ƒç´ ä¹‹é—´çš„ç©ºç™½æ–‡æœ¬å½“ä½œèŠ‚ç‚¹ï¼‰
+		for (var i = 0, ret = []; i < nodes.length; i++) {
+			if (nodes[i].nodeType === 3 && /^\s+$/.test(nodes[i].nodeValue)) //å¦‚æœæ˜¯æ–‡æœ¬èŠ‚ç‚¹ï¼Œå¹¶ä¸”åªæ˜¯ç©ºç™½
+			{
+				continue;
+			}
+			ret.push(nodes[i]); //å°†ä¸æ˜¯ç©ºç™½çš„èŠ‚ç‚¹ä¿å­˜åˆ°ä¸€ä¸ªæ•°ç»„ä¸­ï¼Œæœ€åè¿”å›è¿™ä¸ªæ•°ç»„
+		}
+		return ret;
+	}
+
+	function nextSibling(node) //è¿”å›èŠ‚ç‚¹çš„ä¸‹ä¸€ä¸ªå…„å¼ŸèŠ‚ç‚¹ï¼Œè¿‡æ»¤æ‰ç©ºç™½æ–‡æœ¬èŠ‚ç‚¹
+	{
+		var n = node.nextSibling;
+		if (n != null && n.nodeType === 3 && /^\s+$/.test(n.nodeValue)) {
+			return n.nextSibling;
+		}
+		return n;
+	}
+
+	function preSibling(node) //è¿”å›èŠ‚ç‚¹çš„å‰ä¸€ä¸ªå…„å¼ŸèŠ‚ç‚¹ï¼Œè¿‡æ»¤æ‰ç©ºç™½æ–‡æœ¬èŠ‚ç‚¹
+	{
+		var n = node.preSibling;
+		if (n != null && n.nodeType === 3 && /^\s+$/.test(n.nodeValue)) {
+			return n.preSibling;
+		}
+		return n;
+	}
+
+	function firstChild(node) //ç¬¬ä¸€ä¸ªå­èŠ‚ç‚¹(å…ƒç´ èŠ‚ç‚¹)
+	{
+		//æ­¤å¤„ç”¨çš„æ˜¯ä¸‰å…ƒè¿ç®—ç¬¦ï¼Œåˆ¤æ–­èŠ‚ç‚¹çš„firstChildæ˜¯å¦æ˜¯å…ƒç´ èŠ‚ç‚¹ï¼Œå¦‚æœä¸æ˜¯ï¼Œåˆ™è¿”å›èŠ‚ç‚¹firstChildçš„ä¸‹ä¸€ä¸ªå…„å¼ŸèŠ‚ç‚¹
+		return node.firstChild.nodeType == 1 ? node.firstChild : node.firstChild.nextSibling;
+	}
+
+	function lastChild(node) //æœ€åä¸€ä¸ªå­èŠ‚ç‚¹(å…ƒç´ èŠ‚ç‚¹)
+	{
+		return node.lastChild.nodeType == 1 ? node.lastChild : node.lastChild.previousSibling;
+	}
+
+	function before(newNode, oldNode) //åœ¨æŸä¸ªèŠ‚ç‚¹å‰æ’å…¥ä¸€ä¸ªæ–°èŠ‚ç‚¹
+	{
+		oldNode.parentNode.insertBefore(newNode, oldNode);
+	}
+
+	function delNode(node) //åˆ é™¤æŸä¸ªèŠ‚ç‚¹
+	{
+		node.parentNode.removeChild(node);
+	}
+	//å¤„ç†IEä¸‹çš„å–å¾—å±æ€§åé—®é¢˜ï¼Œå¦‚å–classçš„æ—¶å€™è¦ç”¨className
+	var specialNames = {
+		"class": "className",
+		"for": "htmlFor"
+	};
+
+	function getAttr(node, attrName) {
+		var attr = node.getAttribute(attrName);
+		if (attr == null) {
+			if (attrName in specialNames) {
+				attrName = specialNames[attrName];
+				attr = node.getAttribute(attrName);
+			}
+		}
+		return attr;
+	}
+	//åœ¨æŸä¸ªèŠ‚ç‚¹åé¢æ’å…¥ä¸€ä¸ªèŠ‚ç‚¹
+	function insertAfter(newNode, whichNode) { //å°†newNodeæ’å…¥åˆ°whichNodeçš„åé¢
+		//å¦‚æœwhichNodeæœ‰ä¸‹ä¸€ä¸ªå…„å¼ŸèŠ‚ç‚¹çš„è¯ï¼Œå°±å°†newNodeæ’å…¥åˆ°whichNode.nextSiblingçš„å‰é¢
+		//å¦‚æœwhichNodeæ²¡æœ‰ä¸‹ä¸€ä¸ªå…„å¼ŸèŠ‚ç‚¹ï¼Œåˆ™å°†newNodeæ’å…¥åˆ°whichNode.parentNodeçš„æœ€å
+		var pn = whichNode.parentNode;
+		if (whichNode.nextSibling) { //å¦‚æœå­˜åœ¨å…„å¼ŸèŠ‚ç‚¹
+			pn.insertBefore(newNode, whichNode.nextSibling);
+		} else {
+			pn.appendChild(newNode);
+		}
+		return newNode; //æœ€åè¿”å›è¿™ä¸ªæ–°æ’å…¥çš„èŠ‚ç‚¹
+	}
+</script>
+</head>
 <body>
 	<div id="container">
 		<h1 id="header">DOM Header</h1>
-		<p>Ò³ÃæÖĞµÄP±êÇ©</p>
-		<div id="oDiv">Ò³ÃæÖĞµÄDiv±êÇ©</div>
-		<div id="cloneNode">¿ËÂ¡Ò»¸ö½Úµã</div>
+		<p>é¡µé¢ä¸­çš„Pæ ‡ç­¾</p>
+		<div id="oDiv">é¡µé¢ä¸­çš„Divæ ‡ç­¾</div>
+		<div id="cloneNode">å…‹éš†ä¸€ä¸ªèŠ‚ç‚¹</div>
 	</div>
 </body>
 </html>
