@@ -1,0 +1,87 @@
+@charset "gb2312";
+body{ background: url(../img/wraper.jpg) top center; }
+.header,.topBg{ background: url(../img/banner.jpg) no-repeat top center; height: 722px; }
+.main1000{ margin: 0 auto; width: 1000px; }
+.main1440{ margin: 0 auto; width: 1440px; }
+.wraper{ text-align: left; }
+.sc1,.sc1 .modBoxA{ background: url(../img/bg1.jpg) no-repeat top center; height: 432px; }
+.sc1 .modBoxA{ position: relative; }
+.cmt{ padding-top: 7px; }
+
+
+
+body .thcmt { display: none; }
+body .cmtContent,body .tfcmtWrap,body .tfcmt{ background: none; }
+body .cmtContent{ border:none 0; }
+body #comment_tag{ width: 930px; margin: 0 auto; }
+body .tbcmt .loginTxt,body .tUser .loginTxt{ background: #fff; border:#aea8a1 1px solid; color: #000; font-size: 14px; width: 94px; }
+body.tbcmt .loginTxt, body .tUser .loginTxt:hover{ color: #000}
+body .tBtn .btn{ background: url(../img/set_btn.png) no-repeat; width: 80px; height: 26px; line-height: 26px; }
+body .tBtn .btn:hover{ background: url(../img/set_btn.png) no-repeat; }
+.cmt .modBoxA{ background: url(../img/cmt_bg.png) no-repeat #f4ebe1; padding-top: 66px; max-height: 864px; _height:expression(this.scrollHeight > 864 ? "864px" : "auto"); }
+body .cmtTB{ max-height: 622px; _height:expression(this.scrollHeight > 622 ? "622px" : "auto"); overflow: auto; }
+body #bottom .links,body .cmtTB{ background: none; }
+body #bottom .mid,body #bottom a.bottom_a,body #bottom .sites{ color: #000}
+body .cmtFormTable a{ color: #000}
+
+.photolist{ padding: 38px 0px 0px 39px; }
+.user dd{ float: left; width: 180px; height: 235px; display: inline; margin-right: 16px; position: relative; cursor: pointer; }
+.user .msgBg,.user .msg,.user .Surprise{ width: 180px; height: 235px; position: absolute; left: 0; top: 0; display: none}
+.user .msgBg{ background: #000; opacity: 0.6; }
+.user .msg{ text-align: center; color: #e0c49c; }
+.user .msg .tag{ font:bold 23px/43px "Microsoft YaHei"; padding-top: 5px; }
+.user .msg .name{ font:normal 16px/20px "Microsoft YaHei"}
+.user .msg .txt{ text-align: left; padding: 5px 14px; }
+.user .msg .txt p{ text-indent: 2em; line-height: 22px; }
+
+.worker{ height: 83px; margin-top: 59px; background: url(../img/bg1_1.jpg) no-repeat; }
+.worker p{ padding-left: 188px; font:normal 18px/28px "Microsoft YaHei"; color: #70190a}
+.worker p.pt15{ padding-top: 15px; }
+.worker p i{ margin-right: 37px; }
+#Surprise_close{width: 79px; height: 36px; background: #2a2a27; font:normal 20px/36px "Microsoft YaHei"; cursor: pointer; color: #bbbbbb; border: 1px solid #bbbbbb; border-radius: 2px; display: inline-block; margin-left: 600px;}
+
+
+
+/*user function start*/
+
+.user .show .msgBg,.user .show .msg{ display: block; }
+#Surprise{ color: #fff; display: none; text-align: center; font:normal 20px/38px "Microsoft YaHei"; position: absolute; left: -500px; top: 805px; z-index: 1000; height: 335px; width: 1000px; margin-left: 50%;}
+#bodyBg{ width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; right: 0px; background: #1b120b; opacity: 0.7;z-index: 999; display: none;}
+
+/*user function end*/
+
+/*video start*/
+
+.video{ background: url(../img/video.png) no-repeat #000; width: 773px; height: 454px; position: absolute; left: 120px; top: 179px; padding-top: 40px; }
+
+/*video end*/
+
+.topBg{ position: relative; }
+
+/*debug*/
+.debug{ background: #000; }
+/*debug*/
+
+/*头部玄关*/
+
+#SurpriseTop{ display: block; position: absolute; width: 160px; height: 100px; top: 72px; left: 147px; }
+
+/*头部玄关*/
+
+
+/*低于1440分辨率 层叠样式表*/
+
+#ie .photolist{padding-left: 15px;}
+.user1{background: url(../img/user1.png) no-repeat; height: 235px;}
+.user2{background: url(../img/user2.png) no-repeat; height: 235px;}
+.user3{background: url(../img/user3.png) no-repeat; height: 235px;}
+.user4{background: url(../img/user4.png) no-repeat; height: 235px;}
+.user5{background: url(../img/user5.png) no-repeat; height: 235px;}
+.user6{background: url(../img/user6.png) no-repeat; height: 235px;}
+.user7{background: url(../img/user7.png) no-repeat; height: 235px;}
+#ie .sc1, #ie .sc1 .modBoxA{background: url(../img/bg1s.jpg) no-repeat top center;}
+#scroll{overflow:hidden;}
+/*低于1440分辨率 层叠样式表*/
+
+
+
