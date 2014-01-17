@@ -84,7 +84,7 @@ function scrollResetSize(o) {
 	o.scrollBar.style.width = o.scrollBarWidth + 'px';
 	o.scrollBar.style.height = o.clientHeight + 'px';
 	o.scrollBar.style.top = y + borderTop + 'px';
-	o.scrollBar.style.left = x + o.offsetWidth - o.scrollBarWidth + 'px';
+	// o.scrollBar.style.left = x + o.offsetWidth - o.scrollBarWidth + 'px';
 	o.scrollBarIndex.style.width = o.scrollBarWidth + 'px';
 	var h = o.clientHeight - (o.scrollHeight - o.clientHeight);
 	//当滚动条滑块最小20个像素
