@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js代码控制元素简单的淡入淡出效果</title>
+<style>
+* {margin:0; padding:0}
+body {font:12px Verdana,Arial; color:#777; background:#222}
+a {color:#999; text-decoration:none}
+a:hover {color:#bbb}
+#wrapper {width:500px; margin:75px auto}
+#buttons {height:35px}
+.button {border:1px solid #eee; background:#ccc; border-radius:3px; -moz-border-radius:3px; padding:4px 0 5px; width:245px; text-align:center; cursor:pointer; float:left; color:#555}
+.button:hover {border:1px solid #fff; background:#d9d9d9; color:#333}
+.floatright {float:right}
+#fade {opacity:0; filter:alpha(opacity='0') border-radius:3px; -moz-border-radius:3px; margin-bottom:10px; padding:9px 10px 0; height:26px; border:1px solid #548954; background:#355c33; color:#79af72; text-shadow:1px 1px #21341d}
+</style>
+<script type="text/javascript">
+var fadeEffect=function(){
+	return{
+		init:function(id, flag, target){
+			this.elem = document.getElementById(id);
+			clearInterval(this.elem.si);
+			this.target = target ? target : flag ? 100 : 0;
+			this.flag = flag || -1;
+			this.alpha = this.elem.style.opacity ? parseFloat(this.elem.style.opacity) * 100 : 0;
+			this.si = setInterval(function(){fadeEffect.tween()}, 20);
+		},
+		tween:function(){
+			if(this.alpha == this.target){
+				clearInterval(this.si);
+			}else{
+				var value = Math.round(this.alpha + ((this.target - this.alpha) * .05)) + (1 * this.flag);
+				this.elem.style.opacity = value / 100;
+				this.elem.style.filter = 'alpha(opacity=' + value + ')';
+				this.alpha = value
+			}
+		}
+	}
+}();
+
+var index=0;
+var word=document.getElementById("w").innerHTML;
+var sss=document.getElementById('sss');
+sss.onclick=function type(){
+    document.getElementById("aa").innerText = word.substring(0,index++);
+}
+setInterval(type, 200);
+
+</script>
+</head>
+<body>
+<div id="wrapper">
+<div id="fade">
+	<pre id="aa"></pre>
+<div style="display:none" id="w">谈及航母的改建工程，
+当时为了解决现场建设困难，他们做了大量的工作：一是统筹好所有的工作项目，精确安排每人每天的任务，最忙的时候精确到每个小时的具体任务；二是提高所有的施工质量，通过保证质量，在更大程度上节约时间；三是加班加点。
+“通过这三个方面的手段，才把时间给抢回来。”王治国回忆，“因为我们在北方，那一年遇上了五十年不遇的严寒。前面的很多土建工作，受温度影响很大，耽误了时间。为了抢进度，最后我们把时间抢回来了。”
+</div>
+</div>
+<div id="buttons">
+	<div class="button" onclick="fadeEffect.init('fade', 1)" id="sss">Fade In</div>
+	<div class="button floatright" onclick="fadeEffect.init('fade', 0)">Fade Out</div>
+</div>
+<p>For more information visit <a href="http://www.codefans.net">样式版权所有</a>.<br /></div>
+</body>
+</html>
