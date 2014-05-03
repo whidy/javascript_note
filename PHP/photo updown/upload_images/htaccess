@@ -1,4 +1,0 @@
-<FilesMatch "\.(?i:bak|php|cgi|pl|py)$"> 
-    order deny,allow  
-    deny from all  
-</FilesMatch> 

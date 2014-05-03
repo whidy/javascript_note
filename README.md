@@ -1,9 +1,10 @@
-javascript_note
-===============
-
-本项目集合一些常用Javascript Function
+#写业务最佳解决方案
 
 
-、、、
-	其中jsp php为 jsp php 项目
-、、、
+    .
+    ├── bug               包含常见问题；
+	├── knowledge         前端知识点；
+    ├── sublime_Packages  sublime 插件；
+    ├── interview         面试；
+    ├── note              包含前端规范标准；
+    └── fun               常用JS；

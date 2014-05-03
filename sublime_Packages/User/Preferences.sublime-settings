@@ -1,0 +1,10 @@
+{
+	"auto_complete_selector": "source,text",
+	"font_size": 18,
+	"ignored_packages":
+	[
+		"Vintage",
+		"Emmet Css Snippets"
+	],
+	"word_wrap": true
+}
