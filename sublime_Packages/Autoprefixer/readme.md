@@ -8,6 +8,8 @@ You shouldn't have to care about vendor prefixes. Now you don't have too.
 
 Adding prefixes manually is a chore. It's also hard to keep track of where and which prefixes are needed. This plugin uses the [Autoprefixer](https://github.com/ai/autoprefixer) library to prefix properties and values according to the [Can I Use](http://caniuse.com/) database. Which means it will only add the necessary prefixes and not bloat your stylesheet. It even lets you specify what browsers you want to target. In addition it will remove existing prefixes which are no longer needed.
 
+Works only with CSS. Not any preprocessors like Sass or LESS.
+
 
 ## Install
 
@@ -24,7 +26,7 @@ In a CSS file, open the Command Palette *(Cmd+Shift+P)* and choose `Autoprefix C
 
 ### Options
 
-*(Preferences > Package Settings > JsRun > Settings - User)*
+*(Preferences > Package Settings > Autoprefixer > Settings - User)*
 
 You can specify which browsers you need to support using an array of rules:
 
@@ -33,6 +35,7 @@ You can specify which browsers you need to support using an array of rules:
 - `ff > 20` and `ff >= 20` is Firefox versions newer, that 20.
 - `none` don’t set any browsers to clean CSS from any vendor prefixes.
 - You can also set browsers directly.
+
 
 #### Browser names
 
@@ -44,6 +47,7 @@ You can specify which browsers you need to support using an array of rules:
 - `ios` for iOS Safari.
 - `android` for old Android stock browser.
 - `bb` for Blackberry browser.
+
 
 #### Default
 
@@ -78,6 +82,23 @@ Example:
 ```
 
 
+### Project settings
+
+You can override the default and user settings for individual projects. Just add an `"Autoprefixer"` object to the `"settings"` object in the project's `.sublime-project` file containing your [project specific settings](http://www.sublimetext.com/docs/3/projects.html).
+
+Example:
+
+```json
+{
+	"settings": {
+		"Autoprefixer": {
+			"browsers": ["last 1 version"]
+		}
+	}
+}
+```
+
+
 ## License
 
-MIT License • © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)

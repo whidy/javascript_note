@@ -1,10 +1,10 @@
 说明
 ------------------
-通过本插件，您可以编辑并保存目前编码不被 Sublime Text 支持的文件，特别是中日韩用户使用的 GB2312，GBK，BIG5，EUC-KR，EUC-JP 等。
+通过本插件，您可以编辑并保存目前编码不被 Sublime Text 支持的文件，特别是中日韩用户使用的 GB2312，GBK，BIG5，EUC-KR，EUC-JP 等。ConvertToUTF8 同时支持 Sublime Text 2 和 3。
 
 ![ConvertToUTF8](http://dl.dropbox.com/u/31937639/ConvertToUTF8/ConvertToUTF8.gif)
 
-我现在正努力让 ConvertToUTF8 同时支持 Sublime Text 2 和 3。如果您觉得本插件对您有所帮助，您可以请我喝杯咖啡让我保持清醒。谢！:)
+如果您觉得本插件对您有所帮助，您可以请我喝杯咖啡让我保持清醒。感谢！:)
 
 [![通过支付宝请我](http://dl.dropbox.com/u/31937639/alipay.png)](https://me.alipay.com/seanliang)
 [![通过PayPal请我](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=GP6Y25N7Q9E26&lc=US&item_name=Buy%20me%20a%20cup%20of%20coffee&item_number=ConvertToUTF8&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest)
@@ -15,7 +15,7 @@
 
 ** OS X 用户：Sublime Text 3 使用的内嵌 Python 存在与 Linux 版本相同的问题。
 
-** 我已将此问题报告给 Jon 但未收到任何回复，因此我将创建额外的插件来解决它。如果您急于在发布之前使用本插件，请与我联系获取更多信息。
+** 我已将此问题报告给 Jon 但未收到任何回复，因此我创建了额外的插件来解决它。ConvertToUTF8 会在需要时显示相应说明。
 
 安装
 ------------------
@@ -29,7 +29,7 @@
 
 设置
 ------------------
-请查看 ConvertToUTF8.sublime-settings 文件获取详细信息。为防止更新插件时被覆盖，请将个人设置保存到 User 目录中名为 ConvertToUTF8.sublime-settings 文件中。
+请查看 ConvertToUTF8.sublime-settings 文件获取详细信息。为防止更新插件时被覆盖，请将个人设置保存到 User 目录中名为 ConvertToUTF8.sublime-settings 文件中。您可以在 .sublime-project 文件（可通过 Project > Edit Project 打开）中指定项目专属设置（除 encoding_list 和 max_cache_size 外）。
 
 * encoding_list：检测失败时显示的编码列表
 * max_cache_size：最大编码缓存数量，0 表示不缓存（默认为 100）
@@ -38,6 +38,7 @@
 * default_encoding_on_create：指定新建文件的默认编码（如 GBK），空值表示使用 Sublime Text 的 default_encoding 设置（默认为空值）
 * convert_on_load：启用/禁用文件装载时将窗口内容转换成UTF-8编码，可选项：always 自动转换，never 不转换（默认为 always）
 * convert_on_save：启用/禁用文件保存时将其从UTF-8转换成指定转码，可选项：always 自动转换，never 不转换（默认为 always）
+* lazy_reload：启用/禁用将文件保存到临时位置，并在切换窗口或标签时在后台自动重载，可选项：true，false（默认为 false）
 
 使用说明
 ------------------
@@ -49,6 +50,7 @@
 * 如果 convert_on_save 被设置为 never，文件不会被保存成指定编码
 * 在文件编码检测过程完成前请勿编辑文件
 * 若检测结果不准确，请尝试增大 max_detect_lines 的值或手工指定编码
+* 由于 API 限制，在 lazy_reload 设置为 true 时，保存文件后立即退出 Sublime Text 将造成文件被保存为 UTF-8，正确的内容将在下次 Sublime Text 打开时重载
 
 
 常见问题
@@ -64,7 +66,7 @@
 
 * 问：这个插件支持哪些编码？
 
-  答：只要您的系统支持的编码应该都可使用。
+  答：所有 [Python 支持的编码](http://docs.python.org/library/codecs.html#standard-encodings) 都可以，其他编码如 EUC-TW 将不被支持。
 
 * 问：为何有时重新激活窗口，里面的内容会变乱码？
 
@@ -80,7 +82,7 @@
 
 * 问：我的文件被保存为UTF-8，而且变成了乱码，要如何恢复？
 
-  答：请打开这个文件，并确认它的编码是UTF-8，然后选择菜单项目“File -> Save with Encoding -> Western (Windows 1252)”，关闭再重新打开该文件即可。
+  答：请打开这个文件，并确认它的编码是UTF-8，然后选择菜单项目 File > Save with Encoding > Western (Windows 1252)，关闭再重新打开该文件即可。
 
 联系我
 ------------------

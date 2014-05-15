@@ -77,6 +77,11 @@ class GitNewBranchCommand(GitWindowCommand):
         self.run_command(['git', 'checkout', '-b', branchname])
 
 
+class GitTrackRemoteBranchCommand(GitBranchCommand):
+	command_to_run_after_branch = ['checkout', '-t']
+	extra_flags = ['-r']
+
+
 class GitNewTagCommand(GitWindowCommand):
     def run(self):
         self.get_window().show_input_panel("Tag name", "", self.on_input, None, None)
@@ -124,6 +129,11 @@ class GitFetchCommand(GitWindowCommand):
 class GitPullCommand(GitWindowCommand):
     def run(self):
         self.run_command(['git', 'pull'], callback=self.panel)
+
+
+class GitPullRebaseCommand(GitWindowCommand):
+    def run(self):
+        self.run_command(['git', 'pull', '--rebase'], callback=self.panel)
 
 
 class GitPullCurrentBranchCommand(GitWindowCommand):

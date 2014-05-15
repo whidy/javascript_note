@@ -1,4 +1,4 @@
-DocBlockr is a package for [Sublime Text 2 & 3][sublime] which makes writing documentation a breeze. DocBlockr supports **Javascript**, **PHP**, **ActionScript**, **CoffeeScript**, **Java**, **Groovy**, **Objective C**, **C** and **C++**.
+DocBlockr is a package for [Sublime Text 2 & 3][sublime] which makes writing documentation a breeze. DocBlockr supports **JavaScript**, **PHP**, **ActionScript**, **CoffeeScript**, **TypeScript**, **Java**, **Groovy**, **Objective C**, **C**, **C++** and **Rust**.
 
 ## Installation ##
 
@@ -12,23 +12,35 @@ You can leave either of these things [here][issues]. Pull requests are welcomed 
 
 ## Changelog ##
 
+- **v2.12.2**, *11 Apr 2014*
+  - Fix for PHP autocompletions
+  - Fix `@name` completion for Javascript
+- **v2.12.1**, *4 Mar 2014*
+  - Fix for Sublime Text 3
+- **v2.12.0**, *4 Mar 2014*
+  - Adds support for **TypeScript**, thanks to [Marc-Antoine Parent](https://github.com/maparent)
+  - Adds option to add a spacer line after the description (`"jsdocs_spacer_between_sections": "after_description"`), thanks to [Milos Levacic](https://github.com/levacic)
+  - PHP autocompletions support only the [PSR-5](https://github.com/phpDocumentor/fig-standards/blob/master/proposed/phpdoc.md) tags, thanks to [Gary Jones](https://github.com/GaryJones)
+  - Fix scope issues for Java autocompletions, thanks to [Dominique Wahli](https://github.com/bizoo)
+  - Fix for reflowing paragraphs when no rulers are set.
+- **v2.11.7**, *3 Nov 2013*
+  - Added support for triple `///`, `//!` and `/*!` style comments, thanks to [Jordi Boggiano](https://github.com/seldaek).
+  - Added basic **Rust** support, again thanks to Jordi Boggiano.
+  - Added an option to use short names for bools and ints (`jsdocs_short_primitives`), thanks to [Mat Gadd](https://github.com/drarok).
+  - Fixed a bug with per-section indenting, again thanks to Mat Gadd.
+  - Improved handling of Java return type detection, thanks to [Ben Linskey](https://github.com/blinskey)
 - **v2.11.6**, *14 Aug 2013*
   - Predefined `@author` tags do not get parsed for column spacing
   - Handles the case when an arguments list contains a comma, for example, within a default value
   - A new keybinding for Windows to re-parse a doc block (<kbd>Alt+W</kbd>)
   - Fixes a regression that some function names were not being parsed correctly
-- **v2.11.5**, *11 Aug 2013*
-  - Fix for last deploy which accidentally changed the default `var` tag to "property". Default is "type" once again.
-- **v2.11.4**, *10 Aug 2013*
-  - The tag used on `var` declarations can be customised (eg: to "property" for YUIDoc)
-  - Small fix for function declarations in C/C++ (thanks to [Simon Aittamaa](https://github.com/simait))
-- **v2.11.3**, *18 June 2013*
-  - Adds support for Groovy (thanks to [Tiago Santos](https://github.com/tmcsantos))
-  - README has gifs. So many gifs.
-- **v2.11.2**, *12 June 2013*
-  - Compatibility fixes for ST3, thanks to Marc Neuhaus (@mneuhaus) and Daniel Julius Lasiman (@danieljl).
 
 Older history can be found in [the history file](https://github.com/spadgos/sublime-jsdocs/blob/master/HISTORY.md).
+
+## Show your love
+
+[![Click here to lend your support to: DocBlockr and make a donation at pledgie.com!](https://pledgie.com/campaigns/16316.png?skin_name=chrome)](http://pledgie.com/campaigns/16316)
+
 
 ## Usage ##
 
@@ -233,7 +245,7 @@ You can access the configuration settings by selecting `Preferences -> Package S
 
 - `jsdocs_return_tag` *(String)* The text which should be used for a `@return` tag. By default, `@return` is used, however this can be changed to `@returns` if you use that style.
 
-- `jsdocs_spacer_between_sections` *(Boolean)* If true, then extra blank lines are inserted between the sections of the docblock. Default: `false`.
+- `jsdocs_spacer_between_sections` *(Boolean|String)* If true, then extra blank lines are inserted between the sections of the docblock. If set to `"after_description"` then a spacer will only be added between the description and the first tag. Default: `false`.
 
 - `jsdocs_indentation_spaces_same_para` *(Number)* Described above in the *Reformatting paragraphs* section. Default: `1`
 
@@ -243,11 +255,11 @@ You can access the configuration settings by selecting `Preferences -> Package S
 
 - `jsdocs_lower_case_primitives` *(Boolean)* If true, primitive data types are added in lower case, eg "number" instead of "Number". Default: `false`
 
+- `jsdocs_short_primitives` *(Boolean)* If true, the primitives `Boolean` and `Integer` are shortened to `Bool` and `Int`. Default: `false`
+
+- `jsdocs_newline_after_block` *(Boolean)* If true, an extra line break is added after the end of a docblock to separate it from the code. Default `false`
+
 This is my first package for Sublime Text, and the first time I've written any Python, so I heartily welcome feedback and [feature requests or bug reports][issues].
-
-## Show your love ##
-
-[![Click here to lend your support to: DocBlockr and make a donation at pledgie.com!](https://pledgie.com/campaigns/16316.png?skin_name=chrome)](http://pledgie.com/campaigns/16316)
 
 [closure]: http://code.google.com/closure/compiler/docs/js-for-compiler.html
 [contrib]: blob/master/CONTRIBUTING.md

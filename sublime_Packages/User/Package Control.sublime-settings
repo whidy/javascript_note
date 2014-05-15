@@ -2,8 +2,8 @@
 	"installed_packages":
 	[
 		"Alignment",
-		"AndyEdits",
 		"AndyJS2",
+		"AutoFileName",
 		"Autoprefixer",
 		"BracketHighlighter",
 		"ConvertToUTF8",
@@ -13,8 +13,10 @@
 		"Emmet",
 		"Emmet Css Snippets",
 		"Git",
+		"HTMLAttributes",
 		"JavaScript & NodeJS Snippets",
 		"JavaScript Snippets",
+		"jQuery",
 		"jQuery Snippets pack",
 		"JsFormat",
 		"Package Control",

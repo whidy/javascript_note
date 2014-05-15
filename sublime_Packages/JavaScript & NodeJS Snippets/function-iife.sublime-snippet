@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[
-(function (window, document, undefined) {
-	${0:// body...}
+(function(window, document, undefined) {
+	${1}
 })(window, document);
 ]]></content>
 	<tabTrigger>iife</tabTrigger>

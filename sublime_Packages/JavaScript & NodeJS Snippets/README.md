@@ -1,4 +1,4 @@
-# JavaScript Snippets for Sublime Text
+# JavaScript Snippets for Sublime [![Build Status](https://secure.travis-ci.org/zenorocha/sublime-javascript-snippets.svg?branch=master)](https://travis-ci.org/zenorocha/sublime-javascript-snippets)
 
 ![Demo](http://zno.io/QopI/subime-snippet.gif)
 
@@ -8,8 +8,7 @@ To install through [Package Control](http://wbond.net/sublime_packages/package_c
 search for **JavaScript & NodeJS Snippets**. If you still don't have Package Control in Sublime Text, [go get it](http://wbond.net/sublime_packages/package_control/installation).
 It's pure awesomeness.
 
-If you insist to not install it, you can download the package and
-put it manually inside your `Pacakages` directory. It should work but will not update automatically.
+If you prefer to install it manually, you can download the package and put it inside your `Packages` directory. It should work but will not update automatically.
 
 ## Console
 
@@ -43,32 +42,32 @@ console.warn(${1:obj});
 
 ```javascript
 ${1:document}.addEventListener('${2:event}', function(e) {
-	${0:// body...}
+	${3}
 });
 ```
 
 ### [ac] appendChild
 
 ```javascript
-${1:document}.appendChild('${2}');
+${1:document}.appendChild(${2:elem});
 ```
 
 ### [rc] removeChild
 
 ```javascript
-${1:document}.removeChild('${2}');
+${1:document}.removeChild(${2:elem});
 ```
 
 ### [cel] createElement
 
 ```javascript
-${1:document}.createElement('${2:elem}');
+${1:document}.createElement(${2:elem});
 ```
 
 ### [cdf] createDocumentFragment
 
 ```javascript
-${1:document}.createDocumentFragment();
+${1:document}.createDocumentFragment(${2:elem});
 ```
 
 ### [ca] classList.add
@@ -128,13 +127,13 @@ ${1:document}.removeAttribute('${2:attr}');
 ### [ih] innerHTML
 
 ```javascript
-${1:document}.innerHTML = '${2}';
+${1:document}.innerHTML = '${2:elem}';
 ```
 
 ### [tc] textContent
 
 ```javascript
-${1:document}.textContent = '${2}';
+${1:document}.textContent = '${2:content}';
 ```
 
 ### [qs] querySelector
@@ -154,26 +153,18 @@ ${1:document}.querySelectorAll('${2:selector}');
 ### [fe] forEach
 
 ```javascript
-${1:myArray}.forEach(function (${2:elem}) {
-	${0:// body...}
-});
-```
-
-### [fec] forEachCall
-
-```javascript
-[].forEach.call(document.querySelectorAll(${1:selector}), function (${2:elem}) {
-	${0:// body...}
+${1:myArray}.forEach(function(${2:elem}) {
+	${3}
 });
 ```
 
 ### [fi] for in
 
 ```javascript
-for (var ${1:prop} in ${2:obj}) {
-  if (${2:obj}.hasOwnProperty(${1:prop})) {
-    ${0:// body...}
-  }
+for (${1:prop} in ${2:obj}) {
+	if (${2:obj}.hasOwnProperty(${1:prop})) {
+		${3}
+	}
 }
 ```
 
@@ -182,8 +173,8 @@ for (var ${1:prop} in ${2:obj}) {
 ### [fn] function
 
 ```javascript
-function ${1:methodName} (${2:arguments}) {
-	${0:// body...}
+function ${1:methodName}(${2:arguments}) {
+	${3}
 }
 ```
 
@@ -191,7 +182,7 @@ function ${1:methodName} (${2:arguments}) {
 
 ```javascript
 function(${1:arguments}) {
-	${0:// body...}
+	${2}
 }
 ```
 
@@ -199,15 +190,15 @@ function(${1:arguments}) {
 
 ```javascript
 ${1:ClassName}.prototype.${2:methodName} = function(${3:arguments}) {
-	${0:// body...}
+	${4}
 }
 ```
 
 ### [iife] immediately-invoked function expression
 
 ```javascript
-(function (window, document, undefined) {
-	${0:// body...}
+(function(window, document, undefined) {
+	${1}
 })(window, document);
 ```
 
@@ -217,13 +208,27 @@ ${1:ClassName}.prototype.${2:methodName} = function(${3:arguments}) {
 ${1:methodName}.call(${2:context}, ${3:arguments})
 ```
 
+### [apply] function apply
+
+```javascript
+${1:methodName}.apply(${2:context}, [${3:arguments}])
+```
+
+### [ofn] function as a property of an object
+
+```javascript
+${1:functionName}: function (${2:arguments}) {
+	${3}
+}
+```
+
 ## Timer
 
 ### [si] setInterval
 
 ```javascript
 setInterval(function() {
-	${0:// body...}
+	${2}
 }, ${1:delay});
 ```
 
@@ -231,7 +236,7 @@ setInterval(function() {
 
 ```javascript
 setTimeout(function() {
-	${0:// body...}
+	${2}
 }, ${1:delay});
 ```
 
@@ -258,7 +263,7 @@ assert.notEqual(${1:actual}, ${2:expected});
 ### [me] module.exports
 
 ```javascript
-module.exports = ${1}
+module.exports = ${1:name};
 ```
 
 ### [pe] process.exit
@@ -277,23 +282,23 @@ require('${1:module}');
 ### [desc] describe
 
 ```javascript
-describe('${1:description}', function () {
-  ${0:// body...}
+describe('${1:description}', function() {
+	${2}
 });
 ```
 ### [ita] it asynchronous
 
 ```javascript
-it('${1:description}', function (done) {
-  ${0:// body...}
+it('${1:description}', function(done) {
+	${2}
 });
 ```
 
 ### [its] it synchronous
 
 ```javascript
-it('${1:description}', function () {
-  ${0:// body...}
+it('${1:description}', function() {
+	${2}
 });
 ```
 
@@ -303,6 +308,18 @@ it('${1:description}', function () {
 
 ```javascript
 'use strict';
+```
+
+### [al] alert
+
+```javascript
+alert('${1:msg}');
+```
+
+### [pm] prompt
+
+```javascript
+prompt('${1:msg}');
 ```
 
 ## Contributing
@@ -315,7 +332,7 @@ it('${1:description}', function () {
 
 ## History
 
-Check [Release](https://github.com/zenorocha/sublime-snippets-js/releases) list.
+Check [Releases](https://github.com/zenorocha/sublime-javascript-snippets/releases) for detailed changelog.
 
 ## License
 
