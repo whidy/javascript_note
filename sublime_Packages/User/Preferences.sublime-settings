@@ -1,9 +1,0 @@
-{
-	"auto_complete_selector": "source,text",
-	"font_size": 14,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"word_wrap": true
-}
